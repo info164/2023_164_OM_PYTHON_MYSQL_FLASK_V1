@@ -6,7 +6,7 @@
 import sys
 
 import pymysql
-from flask import flash
+from flask import flash, redirect, url_for
 from flask import render_template
 from flask import request
 from flask import session
@@ -33,9 +33,10 @@ from APP_FILMS_164.essais_wtf_forms.wtf_forms_demo_select import DemoFormSelectW
 @app.route("/demo_select_wtf", methods=['GET', 'POST'])
 def demo_select_wtf():
     genre_selectionne = None
-    # Objet formulaire pour montrer une liste déroulante basé sur la table "t_genre"
+    # Objet formulaire pour montrer une liste déroulante basé su    r la table "t_genre"
     form_demo = DemoFormSelectWTF()
     try:
+        print("form_demo.submit_btn_ok_dplist_genre.data  ", form_demo.submit_btn_ok_dplist_genre.data)
         if request.method == "POST" and form_demo.submit_btn_ok_dplist_genre.data:
 
             if form_demo.submit_btn_ok_dplist_genre.data:
@@ -43,6 +44,12 @@ def demo_select_wtf():
                       form_demo.genres_dropdown_wtf.data)
                 genre_selectionne = form_demo.genres_dropdown_wtf.data
                 form_demo.genres_dropdown_wtf.choices = session['genre_val_list_dropdown']
+                data_genres = session['data_genres']
+                return render_template("zzz_essais_om_104/demo_form_select_wtf.html",
+                                       form=form_demo,
+                                       genre_selectionne=genre_selectionne,
+                                       data_genres_drop_down=data_genres)
+
 
         if request.method == "GET":
             with DBconnection() as mc_afficher:
@@ -50,6 +57,7 @@ def demo_select_wtf():
                 mc_afficher.execute(strsql_genres_afficher)
 
             data_genres = mc_afficher.fetchall()
+            session['data_genres'] = data_genres
             print("demo_select_wtf data_genres ", data_genres, " Type : ", type(data_genres))
 
             """
