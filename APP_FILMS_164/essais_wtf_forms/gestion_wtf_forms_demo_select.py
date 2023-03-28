@@ -107,24 +107,21 @@ def demo_select_dropdown_bootstrap():
     if request.method == 'POST':
         choix_list_drop_down = request.form.getlist("ma_petite_liste_unique")
         print("choix_list_drop_down ", choix_list_drop_down)
-        # print("choix_list_drop_down ", request.form("ma_petite_liste_unique"))
-        print("choix_list_drop_down get ", request.form["ma_petite_liste_unique"])
-        print("choix_list_drop_down get ", request.form.items())
+        print("choix_list_drop_down form ", request.form["ma_petite_liste_unique"])
+        print("choix_list_drop_down form.items() ", request.form.items())
 
         for key, val in request.form.items():
             print(key, val)
 
         keys = request.form.keys()
         keys = [key for key in keys]
-        print("choix_list_drop_down keys ", key)
+        print("choix_list_drop_down keys ", keys)
 
         print("choix_list_drop_down request values ", request.values["ma_petite_liste_unique"])
         print("choix_list_drop_down request data ", request.data)
 
         for x in choix_list_drop_down:
             print("x", x, "genre ", choix_list_drop_down)
-        # choix_form = request.form("ma_petite_liste_unique")
-        # print("resultat complet ", choix_form)
 
     return render_template("zzz_essais_om_104/essai_form_result_dropdown.html",
                            my_choice_dropdown=x,

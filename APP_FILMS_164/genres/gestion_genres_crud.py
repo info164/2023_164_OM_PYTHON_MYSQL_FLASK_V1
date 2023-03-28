@@ -20,7 +20,7 @@ from APP_FILMS_164.genres.gestion_genres_wtf_forms import FormWTFUpdateGenre
     Auteur : OM 2021.03.16
     Définition d'une "route" /genres_afficher
     
-    Test : ex : http://127.0.0.1:5005/genres_afficher
+    Test : ex : http://127.0.0.1:5575/genres_afficher
     
     Paramètres : order_by : ASC : Ascendant, DESC : Descendant
                 id_genre_sel = 0 >> tous les genres.
@@ -79,7 +79,7 @@ def genres_afficher(order_by, id_genre_sel):
     Auteur : OM 2021.03.22
     Définition d'une "route" /genres_ajouter
     
-    Test : ex : http://127.0.0.1:5005/genres_ajouter
+    Test : ex : http://127.0.0.1:5575/genres_ajouter
     
     Paramètres : sans
     

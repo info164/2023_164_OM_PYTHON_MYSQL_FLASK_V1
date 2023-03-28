@@ -1,6 +1,6 @@
 """
     Fichier : routes_demos.py
-    Auteur : OM 2021.03.16
+    Auteur : OM 2023.03.28
     Pour faire des tests divers et variés, avec la notion de "routes" avec FLASK
 """
 
@@ -28,7 +28,7 @@ def route_hommage_a_u_x_V_ictim_es_du_monstre_du_mod_1_6_4():
 
 """
     Pour une démonstration du traitement d'erreurs avec "raise"
-    Pour tester cette fonction: http://127.0.0.1:5005/taillepersonne ou cliquer dans le menu Démo "Taille"
+    Pour tester cette fonction: http://127.0.0.1:5575/taillepersonne ou cliquer dans le menu Démo "Taille"
 """
 
 

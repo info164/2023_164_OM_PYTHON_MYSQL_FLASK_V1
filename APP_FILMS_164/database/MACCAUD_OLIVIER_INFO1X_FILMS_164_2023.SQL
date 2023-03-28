@@ -1,19 +1,20 @@
 -- OM 2021.02.17
 -- FICHIER MYSQL POUR FAIRE FONCTIONNER LES EXEMPLES
 -- DE REQUETES MYSQL
--- Database: xxxx_MACCAUD_OLIVIER_INFO1X_FILMS_162_2023
+-- Database: MACCAUD_OLIVIER_INFO1X_FILMS_164_2023
 
--- Détection si une autre base de donnée du même nom existe
+-- Destruction de la BD si elle existe.
+-- Pour être certain d'avoir la dernière version des données
 
-DROP DATABASE IF EXISTS xxxx_MACCAUD_OLIVIER_INFO1X_FILMS_162_2023;
+DROP DATABASE IF EXISTS MACCAUD_OLIVIER_INFO1X_FILMS_164_2023;
 
 -- Création d'un nouvelle base de donnée
 
-CREATE DATABASE IF NOT EXISTS xxxx_MACCAUD_OLIVIER_INFO1X_FILMS_162_2023;
+CREATE DATABASE IF NOT EXISTS MACCAUD_OLIVIER_INFO1X_FILMS_164_2023;
 
 -- Utilisation de cette base de donnée
 
-USE xxxx_MACCAUD_OLIVIER_INFO1X_FILMS_162_2023;
+USE MACCAUD_OLIVIER_INFO1X_FILMS_164_2023;
 -- --------------------------------------------------------
 
 --
