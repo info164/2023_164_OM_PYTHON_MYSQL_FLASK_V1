@@ -82,8 +82,9 @@ def film_update_wtf():
     # Objet formulaire pour l'UPDATE
     form_update_film = FormWTFUpdateFilm()
     try:
-        print(" on submit ", form_update_film.validate_on_submit())
-        if form_update_film.validate_on_submit():
+        # 2023.05.14 OM S'il y a des listes déroulantes dans le formulaire
+        # La validation pose quelques problèmes
+        if request.method == "POST" and form_update_film.submit.data:
             # Récupèrer la valeur du champ depuis "genre_update_wtf.html" après avoir cliqué sur "SUBMIT".
             nom_film_update = form_update_film.nom_film_update_wtf.data
             duree_film_update = form_update_film.duree_film_update_wtf.data

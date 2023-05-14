@@ -152,8 +152,9 @@ def genre_update_wtf():
     # Objet formulaire pour l'UPDATE
     form_update = FormWTFUpdateGenre()
     try:
-        print(" on submit ", form_update.validate_on_submit())
-        if form_update.validate_on_submit():
+        # 2023.05.14 OM S'il y a des listes déroulantes dans le formulaire
+        # La validation pose quelques problèmes
+        if request.method == "POST" and form_update.submit.data:
             # Récupèrer la valeur du champ depuis "genre_update_wtf.html" après avoir cliqué sur "SUBMIT".
             # Puis la convertir en lettres minuscules.
             name_genre_update = form_update.nom_genre_update_wtf.data
